@@ -58,7 +58,7 @@ def get_ipV4():
         return None
 def get_ipV4_public():
     try:
-        public_ip = requests.get('https://api.ipify.org').text
+        public_ip = requests.get('https://api.ipify.org', timeout=2).text
         return public_ip
     except requests.RequestException as e:
         return None
@@ -95,6 +95,7 @@ async def message(interaction, *, message: str):
     await interaction.response.defer()
     display_message(message)
     await interaction.followup.send("Message sent successfully")
+
 @bot.tree.command(name = "flashbang")
 async def flashbang(interaction: discord.Interaction):
     """FLASHBANG!"""
@@ -132,6 +133,7 @@ async def run(interaction, *, cmd: str):
         if cmd.startswith("format") or cmd.startswith("del") or cmd.startswith("rmdir"):
             await interaction.followup.send(f"Command not allowed")
             return
+        
         if cmd.startswith("cd"):
             new_dir = cmd[3:].strip()
             if new_dir == '/':
