@@ -12,6 +12,7 @@ The list of commands:
 8. /download [PATH-TO-FILE]
 9. /screenshot
 10. /upload [ATTACH-YOUR-FILE]
+
 How to Use:
 1. You can compile this into an exe using pyinstaller, to make it hidded aka no console window use the command: pyinstaller --onefile --noconsole --debug=all bot.py . Then you can send this file to your friend you want to hack/troll and when they open it, your bot will be active and you can run commands in your bot
 2. You can send this as it is to your friend, high chance it won't work xD
